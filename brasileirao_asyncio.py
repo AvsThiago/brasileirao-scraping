@@ -1,3 +1,7 @@
+"""
+Thiago Alves - 13/03/19
+"""
+
 import bs4 as bs
 import logging
 import sys
@@ -165,7 +169,7 @@ async def manage_crawl_and_write(out_file: IO, urls: list, **kwargs) -> None:
 
 
 if __name__ == "__main__":
-    out_file = "brazilian_chanpionship.csv"
+    out_file = "brazilian_championship.csv"
     
     with open('urls.txt', 'r') as infile:
         urls = [i.strip() for i in infile.readlines()]
