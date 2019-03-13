@@ -1,3 +1,8 @@
+"""
+Thiago Alves - 13/03/19
+"""
+
+
 import bs4 as bs
 import urllib.request
 import os
@@ -95,8 +100,7 @@ def extract_data_url(url: str) -> None:
     previous = header_round
     current = header_round.find_next_sibling()
 
-    with open('brazilian_chanpionship.csv', 'a') as file:
-        file.write(",".join(OUT_HEADER)+"\n")
+    with open('brazilian_championship.csv', 'a') as file:
         while 'Ver também' not in current.text:
             if current.name == 'h3':
                 header_round = current
@@ -123,7 +127,7 @@ if __name__ == "__main__":
                 'team_state_VISITOR', 'stadium_name', 'stadium_nick', 'stadium_city', 'hour', 
                 'goals_home_time', 'goals_visitor_time', 'audience', 'income']
 
-    with open('brazilian_chanpionship.csv', 'w') as file:
+    with open('brazilian_championship.csv', 'w') as file:
         file.write(",".join(OUT_HEADER)+"\n")
             
     start = time.time()
